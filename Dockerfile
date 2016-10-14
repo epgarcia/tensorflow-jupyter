@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER Jerome WAX "xblaster@lo2k.net"
+MAINTAINER Tom Etminan
 
 # Run all ubuntu updates and apt-get installs
 RUN export DEBIAN_FRONTEND=noninteractive && \
@@ -53,8 +53,8 @@ ENV USER=condauser
 WORKDIR /home/condauser/notebooks
 
 
-RUN /bin/bash -c "$PY3PATH/pip install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.9.0rc0-cp35-cp35m-linux_x86_64.whl"
-RUN /bin/bash -c "$PY3PATH/pip install Pillow==2.9.0 matplotlib sklearn tflearn"
+RUN /bin/bash -c "$PY3PATH/pip install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0rc0-cp27-none-linux_x86_64.whl"
+RUN /bin/bash -c "$PY3PATH/pip install Pillow==2.9.0 matplotlib sklearn keras"
 
 USER root
 RUN mkdir /notebook
